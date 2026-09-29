@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block heading %}Tamil Nadu Risk Map{% endblock %}
+{% block content %}
+<section class="hero"><div><small>GEOSPATIAL MONITORING</small><h1>Rail network risk map</h1><p>Click a monitored section to inspect its latest LSTM prediction.</p></div></section>
+<div class="panel"><div id="map"></div></div>
+<div id="detail" class="panel hidden"></div>
+{% endblock %}
+{% block scripts %}<script>loadMap();</script>{% endblock %}

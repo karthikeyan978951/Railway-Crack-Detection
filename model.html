@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block heading %}Model Performance{% endblock %}
+{% block content %}
+<section class="hero"><div><small>DEEP LEARNING</small><h1>LSTM model performance</h1><p>Evaluation metrics and training behaviour of the railway failure model.</p></div></section>
+<div class="cards" id="metricCards"></div>
+<div class="grid2"><div class="panel"><h2>Training vs validation loss</h2><canvas id="lossChart"></canvas></div><div class="panel"><h2>Training vs validation accuracy</h2><canvas id="accChart"></canvas></div></div>
+<div class="panel"><h2>Model configuration</h2><pre id="config"></pre></div>
+{% endblock %}
+{% block scripts %}<script>loadModel();</script>{% endblock %}

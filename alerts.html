@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block heading %}Alert History{% endblock %}
+{% block content %}
+<section class="hero"><div><small>EVENT LOG</small><h1>Early warning alerts</h1><p>Automatically generated when risk reaches HIGH or CRITICAL.</p></div>
+<button onclick="simulate('TRK-001','critical')">⚠ Simulate critical condition</button></section>
+<div class="panel"><div class="tablewrap"><table><thead><tr><th>ALERT ID</th><th>SECTION</th><th>DATE / TIME</th><th>PROBABILITY</th><th>RISK</th><th>STATUS</th><th>RECOMMENDED ACTION</th></tr></thead><tbody id="alertRows"></tbody></table></div></div>
+{% endblock %}
+{% block scripts %}<script>loadAlerts();</script>{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero"><div><small>OPERATIONS CENTER · REAL-TIME</small><h1>Track health overview</h1><p>Sequential condition intelligence across the monitored rail network.</p></div>
+<button onclick="simulate('TRK-001','normal')">↻ Simulate sensor reading</button></section>
+<div class="cards">
+<div class="card"><small>TOTAL SECTIONS</small><strong id="total">—</strong><p>Active coverage</p></div>
+<div class="card"><small>LOW RISK</small><strong id="low">—</strong><p class="green">Within baseline</p></div>
+<div class="card"><small>MEDIUM RISK</small><strong id="medium">—</strong><p class="amber">Requires attention</p></div>
+<div class="card"><small>HIGH / CRITICAL</small><strong id="danger">—</strong><p class="red">Priority inspection</p></div>
+</div>
+<div class="panel"><div class="panelhead"><div><h2>Track sections</h2><p>Latest model inference per monitored segment</p></div><a href="/alerts">View alert history →</a></div>
+<input id="search" class="search" placeholder="Search section or location" oninput="filterRows()">
+<div class="tablewrap"><table><thead><tr><th>SECTION</th><th>LOCATION</th><th>VIBRATION</th><th>ACCELERATION</th><th>TEMP.</th><th>DEFORMATION</th><th>FAILURE PROBABILITY</th><th>RISK</th></tr></thead><tbody id="rows"></tbody></table></div></div>
+<div class="grid2"><div class="panel"><h2>Risk distribution</h2><canvas id="riskChart"></canvas></div><div class="panel"><h2>LSTM sequential inference</h2><canvas id="trendChart"></canvas><p class="muted">12 sequential readings · MODEL ONLINE · LSTM-v1</p></div></div>
+{% endblock %}
+{% block scripts %}<script>loadDashboard();</script>{% endblock %}
